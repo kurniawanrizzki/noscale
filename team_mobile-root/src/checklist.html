@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-transparent">
+    <h1 class="title">Report Kunjungan Pelanggan</h1>
+    <button class="button button-clear button-primary" ng-click="removeCk()">Cancel</button>
+  </ion-header-bar>
+  <ion-content>
+   <form>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Keterangan Kunjungan</span>
+      <textarea cols="5" rows="5" placeholder="Keterangan Kunjungan" ng-model="dataInput.ket" name="keterangan"></textarea>
+    </label>
+    <div class="item item-divider">
+      Status
+    </div>
+    <ion-radio ng-repeat="item in statusKunjunganList" ng-value="item.value" ng-model="dataInput.statusKunjungan" ng-checked="item.value">{{item.text}}</ion-radio>
+    <div class="spacer" style="height: 5px;"></div>
+    <button class="button button-full button-blue-sky" ng-click="kunjungan(dataInput)">
+      Simpan
+    </button>
+   </form>
+  </ion-content>
+</ion-modal-view>

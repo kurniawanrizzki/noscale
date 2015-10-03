@@ -1,0 +1,9 @@
+<ion-view title="Beranda" class="page">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-android-navigate" ng-click="showNavigasi()" ng-show="pelanggans.length != 0"></button>
+    </ion-nav-buttons>
+	<ion-content scroll="false">
+    	<map on-create="mapCreated(map)" data-tap-disabled="true"></map>
+    </ion-content>
+    <circular options="options"> </circular>
+</ion-view>

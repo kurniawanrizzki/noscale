@@ -1,0 +1,29 @@
+<ion-view hide-nav-bar="true">
+	<ion-content has-header="false" scroll="false" class="login-container">
+        <div class="login-box animated fadeInDown">
+            <div class="login-logo"></div>
+            <div class="login-body">
+                <div class="login-title"><strong>Selamat Datang di TAM</strong>, Silahkan Login</div>
+		        <form>
+					<div class="list">
+						<label class="item item-input form-control">
+							<input type="text" placeholder="Email Teknisi" name="email_teknisi" ng-model="dataLogin.e_teknisi">
+						</label>
+						<label class="item item-input">
+							<input type="password" placeholder="Password Teknisi" name="password" ng-model="dataLogin.pass">
+						</label>
+					</div>
+					<div class="spacer" style="height: 5px;"></div>
+		      		<button class="button button-full button-blue-sky" ng-click="login(dataLogin);">
+		        		Login
+		      		</button>
+				</form>
+            </div>
+            <div class="login-footer">
+                <div class="pull-left">
+                    <span style="color:#CE271E;font-weight:bold">&copy; 2015 Telkom Akses Monitoring </span>
+                </div>
+            </div>
+        </div>   
+	</ion-content>
+</ion-view>

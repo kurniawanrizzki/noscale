@@ -1,0 +1,175 @@
+/* Empty. Add your own CSS if you like */
+@import "font-awesome-4.4.0/css/font-awesome.min.css";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,latin-ext);
+
+/*BAR TRANSPARENT*/
+.bar.bar-transparent {
+    z-index:2;  
+    background-color: rgba(51,65,78,.66) !important; /* or transparent, or background:none */
+}
+.bar.bar-transparent .title {
+    color: #FFF; 
+}
+.bar-subheader {
+    z-index: 1;
+    transition: top 0.25s ease;
+    height: 266px !important;
+}
+
+.has-subheader {
+    top: 300px !important;
+}
+.button-blue-custom{
+    background-color: #4AA3DF;
+    border-color: #4AA3DF;
+    color: #fff;
+}
+.button-blue-sky{
+    background-color: rgb(63,186,228);
+    border-color: #158FB9;
+    color: #fff;
+}
+.button.button-blue-sky:hover {
+    color: #fff;
+    text-decoration: none; 
+}
+.button.button-blue-sky.active, .button.button-blue-sky.activated {
+    border-color: #158FB9;
+    background-color: #158FB9;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); 
+}
+.button.button-blue-sky.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #158FB9; 
+}
+.button.button-blue-sky.button-icon {
+    border-color: transparent;
+    background: none; 
+}
+.button.button-blue-sky.button-outline {
+    border-color: #158FB9;
+    background: transparent;
+    color: #158FB9; 
+}
+.button.button-blue-sky.button-outline.active, .button.button-blue-sky.button-outline.activated {
+    background-color: #158FB9;
+    box-shadow: none;
+    color: #fff; 
+}
+.scroll-content {
+  overflow: visible !important;
+}
+/*END BAR TRANSPARENT*/
+
+/* LOGIN */
+.login-container {
+  float: left;
+  width: 100%;
+  min-height: 100%;
+  background: url("../img/bg.png");
+}
+.login-container .login-box {
+  width: 400px;
+  margin: 0px auto;
+  padding-top: 100px;
+}
+.login-container .login-box .login-logo {
+  background: url("../img/logo.png") top center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 78px;
+  float: left;
+  margin-bottom: 10px;
+}
+.login-container .login-box .login-body {
+  width: 100%;
+  float: left;
+  background:  #33414e;
+  padding: 15px 20px 15px 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.login-container .login-box .login-body .login-title {
+  color: #FFF;
+  font-size: 19px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+@media all and (min-width:960px) and (max-width: 1024px) {
+  /* put your css styles in here */
+    .login-container .login-box {
+    width: 223px;
+    margin: 0px auto;
+    padding-top: 100px;
+  }
+}
+
+@media all and (min-width:321px) and (max-width: 480px) {
+  /* put your css styles in here */
+
+  .login-container .login-box {
+    width: 300px;
+    margin: 0px auto;
+    padding-top: 100px;
+  }
+
+  .login-container .login-box .login-body {
+    width: 100%;
+    float: left;
+    background:  #33414e;
+    padding: 15px 20px 15px 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .login-container .login-box .login-body .login-title {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+}
+
+/* END LOGIN */
+ion-popover-view.fit {
+  height: auto !important;
+}
+
+ion-popover-view.fit ion-content {
+  position: relative !important;
+}
+
+.platform-android ion-popover-view.fit {
+  margin-top: 10px !important;
+}
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page{
+  background: #303040;
+  color: white; 
+}
+
+.slider-slide {
+  min-height: 200px
+}
+.blue{
+	background:blue;
+}
+.yellow{
+	background:yellow;
+}
+.pink{
+	background:pink;
+}
+
+
+

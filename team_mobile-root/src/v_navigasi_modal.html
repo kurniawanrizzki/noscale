@@ -1,0 +1,18 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-transparent">
+    <h1 class="title">Report Kunjungan Pelanggan</h1>
+    <button class="button button-clear button-primary" ng-click="removeNavigasi()">Cancel</button>
+  </ion-header-bar>
+  <ion-content>
+   <form>
+    <label class="item item-select">
+      <span class="input-label">NAMA PELANGGAN</span>
+      <select ng-model="dataCari.cariPelanggan" name="pelanggan" ng-options="r as r.nama_pelanggan for r in pelanggans"></select>
+    </label>
+    <div class="spacer" style="height: 5px;"></div>
+    <button class="button button-full button-blue-sky" ng-click="cari(dataCari)">
+      Cari
+    </button>
+   </form>
+  </ion-content>
+</ion-modal-view>

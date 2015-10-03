@@ -1,0 +1,71 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-transparent">
+    <h1 class="title">Setting Profil</h1>
+    <button class="button button-clear button-primary" ng-click="removeSetting()">Cancel</button>
+  </ion-header-bar>
+  <ion-content>
+   <form>
+      <div class='list' ng-repeat="item in pegawai">
+      <div class="item item-divider">
+        ID PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.id_pegawai}}
+      </div>
+      <div class="item item-divider">
+        NAMA PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.nama_pegawai}}
+      </div>
+      <div class="item item-divider">
+        JABATAN PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.jabatan_pegawai}}
+      </div>
+      <div class="item item-divider">
+        ALAMAT PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.alamat_pegawai}}
+      </div>
+      <ion-checkbox ng-model="dataEdit.alamat" name="alamat">Rubah Alamat</ion-checkbox>
+      <label class="item item-input" ng-show="dataEdit.alamat">
+        <textarea cols="5" rows="5" placeholder="Alamat Pegawai Baru" ng-model="dataEdit.xalamat" name="xalamat"></textarea>
+      </label>
+      <div class="item item-divider">
+        KONTAK PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.telp_hp_pegawai}}
+      </div>
+      <ion-checkbox ng-model="dataEdit.kontak" name="kontak">Rubah Kontak Pegawai</ion-checkbox>
+      <label class="item item-input"  ng-show="dataEdit.kontak">
+        <input type="tel" ng-model="dataEdit.xkontak" placeholder="Kontak Pegawai Baru" name="xkontak" maxlength="12" />
+      </label>
+      <div class="item item-divider">
+        EMAIL PEGAWAI
+      </div>
+      <div class="item item-input">
+        {{item.email_pegawai}}
+      </div>
+      <ion-checkbox ng-model="dataEdit.email" name="p_email">Rubah Email Akun</ion-checkbox>
+      <label class="item item-input"  ng-show="dataEdit.email">
+        <input type="email" ng-model="dataEdit.xemail" placeholder="Email Pegawai Baru" name="xemail"/>
+      </label>
+      <ion-checkbox ng-model="dataEdit.pass" name="p_pass">Rubah Password Akun</ion-checkbox>
+      <label class="item item-input"  ng-show="dataEdit.pass">
+        <input type="password" ng-model="dataEdit.xpass" placeholder="Password Baru" name="xpass" />
+      </label>
+      <label class="item item-input"  ng-show="dataEdit.pass">
+        <input type="password" ng-model="dataEdit.xpass_c" placeholder="Konfirmasi Password" name="xpass_c"/>
+      </label>
+      <div class="spacer" style="height: 5px;"></div>
+      <button class="button button-full button-blue-sky" ng-click="editDataPegawai(dataEdit)">
+        Simpan
+      </button>
+      </div>
+   </form>
+  </ion-content>
+</ion-modal-view>

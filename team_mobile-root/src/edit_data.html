@@ -1,0 +1,53 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-transparent">
+    <h1 class="title">Edit Data Pelanggan</h1>
+    <button class="button button-clear button-primary" ng-click="removepe()">Cancel</button>
+  </ion-header-bar>
+  <ion-header-bar class="bar bar-subheader item-input-inset">
+    <map on-create="mapCreatedEdit(map)" data-tap-disabled="true"></map>
+  </ion-header-bar>
+  <ion-content>
+   <form>
+      <div class='list' ng-repeat="item in editData">
+      <div class="item item-divider">
+        ID SPEEDY
+      </div>
+      <div class="item item-input">
+        {{item.id_speedy}}
+      </div>
+      <div class="item item-divider">
+        NAMA PELANGGAN
+      </div>
+      <div class="item item-input">
+        {{item.nama_pelanggan}}
+      </div>
+      <div class="item item-divider">
+        ALAMAT PELANGGAN
+      </div>
+      <div class="item item-input">
+        {{item.alamat_pelanggan}}
+      </div>
+      <ion-checkbox ng-model="dataEdit.lokasi" name="lokasi" ng-click="inputLokasi()">Gunakan Alamat Dengan Lokasi Sekarang</ion-checkbox>
+
+      <div class="item item-divider">
+        TELEPON SELULAR
+      </div>
+      <div class="item item-input" ng-if="item.telp_hp_pelanggan != ' '">
+        {{item.telp_hp_pelanggan}}
+      </div>
+      <div class="item item-input" ng-if="item.telp_hp_pelanggan == ' '">
+        -
+      </div>
+      <ion-checkbox ng-model="dataEdit.telepon_selular" name="telp_selular">Rubah Nomer Telepon Selular</ion-checkbox>
+      <label class="item item-input"  ng-show="dataEdit.telepon_selular">
+        <input type="tel" ng-model="dataEdit.xtelepon_selular" placeholder="Nomer Telepon Selular" name="xtelepon_selular" maxlength="12" />
+      </label>
+      
+      <div class="spacer" style="height: 5px;"></div>
+      <button class="button button-full button-blue-sky" ng-click="editDataPelanggan(dataEdit)">
+        Simpan
+      </button>
+      </div>
+   </form>
+  </ion-content>
+</ion-modal-view>

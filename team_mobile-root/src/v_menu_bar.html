@@ -1,0 +1,17 @@
+<ion-popover-view class="fit">
+  <ion-content>
+    <div class="list" ng-click="popover.hide()" ng-repeat = "item in dataPegawai">
+      <a class="item item-avatar">
+        <img src="http://students.ce.undip.ac.id/Telkom_akses/assets/images/{{item.img}}">
+        <h2>{{item.nama}}</h2>
+        <p>{{item.id}}</p>
+      </a>
+      <a class="item" ng-click="showSetting()">
+        Setting 
+      </a>
+      <a class="item" ng-click="logoutSistem()">
+        Logout
+      </a>
+    </div>
+  </ion-content>
+</ion-popover-view>

@@ -1,0 +1,40 @@
+<ion-view title="Data">
+	<ion-content>
+		<!-- digunakan untuk refresh data -->
+		<ion-refresher on-refresh="doRefresh()">
+		       
+		</ion-refresher>
+		<!-- Jika tidak ada data -->
+		<div ng-if="pelanggan.length === 0" class="padding">
+			<h1>Tidak Terdapat Jadwal Hari Ini</h1>
+			<p>Tunggu Penjadwalan Berikutnya</p>
+		</div>
+		<!-- jika terdapat data -->
+		<ion-list ng-if="pelanggan.length > 0">
+			<ion-item class="item-remove-animate item-icon-right" ng-repeat="item in pelanggan" type="item-text-wrap">
+			<h2>{{item.nama_pelanggan}}</h2>
+			<p>{{item.alamat_pelanggan}}</p>
+			<p>{{item.ket_keluhan}}</p>
+			<!-- button swipe -->
+			<ion-option-button class="button-blue-sky" ng-click="showDetail(item)">
+			  	<span class="item item-icon-right button-blue-sky" style="border:none;">
+    				<i class="icon ion-person"></i>
+    				Detail
+  				</span>
+			</ion-option-button>
+			<ion-option-button class="button-blue-custom" ng-click="peshow(item)">
+			  	<span class="item item-icon-right button-blue-custom" style="border:none;">
+    				<i class="icon ion-android-create"></i>
+    				Edit
+  				</span>
+			</ion-option-button>
+			<ion-option-button class="button-blue-sky" ng-click="ckshow(item)">
+			  	<span class="item item-icon-right button-blue-sky" style="border:none;">
+    				<i class="icon ion-android-star"></i>
+    				Tandai
+  				</span>
+			</ion-option-button>
+		</ion-item> 	    		
+    </ion-content>
+    <circular options="options"> </circular>
+</ion-view>	

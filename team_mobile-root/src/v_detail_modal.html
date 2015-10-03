@@ -1,0 +1,72 @@
+<ion-modal-view ng-repeat="item in detailData">
+  <ion-header-bar class="bar bar-header bar-transparent">
+    <h1 class="title">DETAIL PELANGGAN {{item.nama_pelanggan}}</h1>
+    <button class="button button-clear button-primary" ng-click="removeDetail()">Cancel</button>
+  </ion-header-bar>
+  <ion-header-bar class="bar bar-subheader item-input-inset">
+    <map on-create="mapCreatedDetail(map)" data-tap-disabled="true"></map>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list" >
+      <div class="item item-divider">
+        ID SPEEDY
+      </div>
+      <div class="item">
+        {{item.id_speedy}}
+      </div>
+      <div class="item item-divider">
+        DP DAN MSAN
+      </div>
+      <div class="item">
+        {{item.nama_dp}} DAN {{item.nama_msan}}
+      </div>
+      <div class="item item-divider">
+        NAMA PELANGGAN
+      </div>
+      <div class="item">
+        {{item.nama_pelanggan}}
+      </div>
+      <div class="item item-divider">
+        ALAMAT PELANGGAN
+      </div>
+      <div class="item">
+        {{item.alamat_pelanggan}}
+      </div>
+      <div class="item item-divider">
+        TELEPON RUMAH
+      </div>
+      <div class="item item-button-right" ng-if="item.telp_rumah_pelanggan != ' '">
+        {{item.telp_rumah_pelanggan}}
+        <div class="buttons">
+          <a class="button-icon button-clear ion-android-call" ng-href="tel: {{item.telp_rumah_pelanggan}}"></a>
+        </div>
+      </div>
+      <div class="item" ng-if="item.telp_rumah_pelanggan == ' '">
+        -
+      </div>
+      <div class="item item-divider">
+        TELEPON SELULAR
+      </div>
+      <div class="item item-button-right" ng-if="item.telp_hp_pelanggan != ' '">
+        {{item.telp_hp_pelanggan}}
+        <div class="buttons">
+          <a class="button-icon button-clear ion-android-call" ng-href="tel: {{item.telp_hp_pelanggan}}"></a>
+          <a class="button-icon button-clear ion-android-mail" ng-click="smstopelanggan(item)"></a>
+        </div>
+      </div>
+      <div class="item" ng-if="item.telp_hp_pelanggan == ' '">
+        -
+      </div>
+      <div class="item item-divider">
+        KETERANGAN KELUHAN
+      </div>
+      <div class="item">
+        {{item.ket_keluhan}}
+        <span class="item-note">
+          {{item.jenis_keluhan}}
+        </span>
+      </div>      
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
