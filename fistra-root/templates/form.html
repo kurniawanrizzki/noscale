@@ -1,0 +1,75 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-energized">
+		<ion-button class="button icon-left ion-chevron-left button-clear" ng-click="exitDialog()"></ion-button>
+		<h1 class="title">Form Data</h1>
+	</ion-header-bar>
+	<ion-content class="padding" has-header="true">
+		<form name="form" ng-model="form" novalidate="">
+			<ion-list>
+				<label class="item item-input">
+					<span class="input-label">Nama</span>
+					<input type="hidden" ng-model="id_agen" name="id_agen">
+					<input type="hidden" ng-model="id_profil" name="id_profil">
+					<input type="text" ng-model="nama" name="nama" required="required">
+				</label>
+					
+				<div class="form-errors" ng-messages="form.nama.$error" ng-show="isEmptyNama">
+                	<div class="form-error" ng-message="required">Field Nama Tidak Boleh Kosong</i></div>
+              	</div>	
+
+				<label class="item item-select">
+					<span class="input-label">Jenis Agen</span>
+					<select ng-model="jenis_agen" name="jenis_agen" ng-options="r as r.jenis_agen for r in jenis_agens"></select>
+				</label>
+				
+				<label class="item item-divider">
+          			Alamat
+       			</label>
+				<ion-checkbox ng-model="lokasi_saya" name="lokasi_saya">Gunakan Lokasi Saya Sekarang</ion-checkbox>
+				<label class="item item-input"  ng-show="!lokasi_saya">
+					<textarea rows="10" ng-model="alamat" name="alamat" required="required"></textarea>
+				</label>
+
+				<div class="form-errors" ng-show="isEmptyAlamat && !lokasi_saya" ng-messages="form.alamat.$error">
+                	<div class="form-error" ng-message="required">Field Alamat Tidak Boleh Kosong</div>
+              	</div>	
+
+				<label class="item item-input">
+					<span class="input-label">Telepon Agen 1</span>
+					<input type="tel" ng-model="telepon1" name="telepon1" required="required" ng-maxlength="12">
+				</label>
+
+
+				<div class="form-errors" ng-messages="form.telepon1.$error">
+                	<div class="form-error" ng-message="maxlength">Field Telepon Agen 1 Tidak Boleh Lebih dari 12 Karakter</div>
+              	</div>
+
+				<div class="form-errors" ng-show="isEmptyTeleponSelular"  ng-messages="form.telepon1.$error">
+                	<div class="form-error" ng-message="required">Field Telepon Selular Tidak Boleh Kosong</div>
+              	</div>	
+
+				<label class="item item-input">
+					<span class="input-label">Telepon Agen 2/span>
+					<input type="tel" ng-model="telepon2" name="telepon2" ng-maxlength="12" required="required">
+				</label>
+
+				<div class="form-errors" ng-messages="form.telepon2.$error">
+                	<div class="form-error" ng-message="maxlength">Field Telepon Agen 2 Tidak Boleh Lebih dari 12 Karakter</div>
+              	</div>
+
+				<div class="form-errors" ng-show="isEmptyTeleponKantor" ng-messages="form.telepon2.$error">
+                	<div class="form-error" ng-message="required">Field Telepon Kantor Tidak Boleh Kosong</div>
+              	</div>	
+
+				<label class="item item-divider">
+          			Rute Tujuan Agen
+       			</label>
+       			<ion-checkbox ng-repeat="item in ruteAgen" ng-model="item.flag_awal" ng-checked="item.flag_awal" ng-change="changeRuteAgen()" ng-show="aksi == 'Tambah'">{{ item.tujuan_rute }}</ion-checkbox>
+       			<ion-checkbox ng-repeat="item in ruteAgen" ng-model="item.flag_rute" ng-checked="item.flag_rute" ng-change="changeRuteAgen()" ng-show="aksi == 'ubah'">{{ item.tujuan_rute }}</ion-checkbox>
+
+			</ion-list>
+			<ion-button ng-show="aksi == 'Tambah'" class="button button-block button-dark" ng-click="doInput(form)" ng-init="saveEmpty(form)">Tambah</ion-button>
+			<ion-button ng-show="aksi == 'ubah'" class="button button-block button-dark" ng-click="doEdit(form)" >Ubah</ion-button>
+		</form>  
+	</ion-content>
+</ion-modal-view>

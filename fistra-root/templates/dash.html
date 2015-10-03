@@ -1,0 +1,15 @@
+<ion-view view-title="Beranda">
+	<ion-nav-bar class="bar-energized" >
+	    <ion-nav-buttons side="left">
+	       <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+	    </ion-nav-buttons>
+	    <ion-nav-buttons side="right">
+	        <button class="button button-icon button-clear ion-flag" ng-click="showHasilModal()" ng-if="hasilCari.length !== 0"></button>
+	</ion-nav-bar>
+	<ion-content class="padding" scroll="false">
+    <map on-create="mapCreated(map)" data-tap-disabled="true"></map>
+    </ion-content>
+    <ion-footer-bar class="bar-dark" align-title="left">
+      <button class="button button-clear button-energized button-icon icon icon-location" ng-click="showActionsheet()"></button>
+    </ion-footer-bar>
+</ion-view>

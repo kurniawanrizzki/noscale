@@ -1,0 +1,33 @@
+<ion-view view-title="Riwayat">
+	<ion-content>
+		<ion-refresher on-refresh="refreshRiwayat()" refreshing-icon="ion-loading-c"></ion-refresher>
+		<div ng-if="pencarian.length === 0" class="padding">
+			<h1>Riwayat Kosong</h1>
+      		<p>Lakukan Pencarian Lokasi Agen Terdekat di Menu Beranda</p>
+		</div>
+		<div class="list card" ng-repeat="item in pencarian" ng-if="pencarian.length>0">
+			<div class="item item-divider"><p>{{item.tanggal_pencarian}}</p></div>
+			<div class="item item-body" ng-show="item.jenis_parameter == 'Rute Agen'">
+				<p>Anda melakukan pencarian berdasarkan <strong>{{item.jenis_parameter}}</strong> dengan tujuan rute <strong>{{item.jenis_spesifikasi}}</strong></p>
+			</div>
+			<div class="item item-body" ng-show="item.jenis_parameter == 'Jenis Agen'">
+				<p>Anda melakukan pencarian berdasarkan <strong>{{item.jenis_parameter}}</strong> dengan jenis agen <strong>{{item.jenis_spesifikasi}}</strong></p>
+			</div>
+			<div class="item item-body" ng-show="item.jenis_parameter == 'Nama Agen'">
+				<p>Anda melakukan pencarian berdasarkan <strong>{{item.jenis_parameter}}</strong> dengan nama agen <strong>{{item.jenis_spesifikasi}}</strong></p>
+			</div>
+			<div class="item tabs tabs-secondary tabs-icon-left">
+				<a class="tab-item" ng-click="showMap(item)">
+					<i class="icon icon-eye2"></i>
+					Lihat Hasil
+				</a>
+				<a class="tab-item"  ng-click="hapusRiwayat(item)">
+					<i class="icon ion-trash-b"></i>
+					Hapus Hasil
+				</a>
+			</div>
+		</div>
+		<!--end list-->
+		<!--insyallah fix,tinggal masih bingung dividernya-->
+    </ion-content>
+</ion-view>

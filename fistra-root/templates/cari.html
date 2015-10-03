@@ -1,0 +1,55 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-energized">
+		<ion-button class="button icon-left ion-chevron-left button-clear" ng-click="removeModalCari()"></ion-button>
+		<h1 class="title">Pencarian</h1>
+	</ion-header-bar>
+	<ion-content class="padding">
+		<form name="search" ng-model="search">
+			<ion-list>
+			  <ion-item>
+
+			  	<label class="item item-select" ng-show="cari === 'jenis_agen'">
+			    	<span class="input-label">Jenis Agen</span>
+					<select ng-model="selectedOption" name="jAgen" ng-options="r as r.jenis_agen for r in jenis_agens"></select>
+					<input type="hidden" ng-model="paramIdJenis" name="paramIdJenis">
+			    </label>
+			    <label class="item item-select" ng-show="cari === 'jenis_agen'">
+			    	<span class="input-label">Rute</span>
+			    	<select ng-model="selectRute" name="jRuteJenis" ng-options="item as item.tujuan_rute for item in rute">
+			    	</select>
+			    	</span>
+			    </label>
+
+			    <label class="item item-select" ng-show="cari === 'rute_agen'">
+			    	<span class="input-label">Rute</span>
+			    	<select ng-model="selectRute" name="jRute" ng-options="item as item.tujuan_rute for item in rute">
+			    	</select>
+			    	<input type="hidden" ng-model="paramIdRute" name="paramIdRute">
+			    	</span>
+			    </label>
+				<label class="item item-select" ng-show="cari === 'nama_agen'">
+					<span class="input-label">Nama Agen</span>
+						<select ng-model="selectData" name="jNama" ng-options="item as item.nama_agen for item in data">
+						</select>	
+					</span>
+					<input type="hidden" ng-model="paramIdNama" name="paramIdNama">
+				</label>
+				<label class="item item-divider">
+          			Mode Jelajah
+       			</label>
+				<div class="button-bar">
+		        	<a class="button button-icon button-clear icon-bicycle" ng-class="{'button-positive': isJelajah('1')}" ng-click="setJelajah('1')"></a>
+	            	<a class="button button-icon button-clear icon-directions-car" ng-class="{'button-positive': isJelajah('2')}" ng-click="setJelajah('2')"></a>
+	          	</div>
+	          	<label class="item item-divider" ng-show="jelajah === '2'">
+          			Mode Jalur
+       			</label>
+				<ion-radio ng-repeat="item in Jalur"  ng-model="jalur.id_jalur" ng-value="item.id_jalur" ng-show="jelajah === '2'">{{item.mode_jalur}}</ion-radio>
+			  </ion-item>
+			</ion-list>
+			<ion-button class="button button-block button-dark"  ng-click="loadRuteByNama(search)" ng-show="cari === 'nama_agen'" ng-init="saveEmpty(search)">Cari</ion-button>
+			<ion-button class="button button-block button-dark"  ng-click="loadRuteByJenis(search)" ng-show="cari === 'jenis_agen'" ng-init="saveEmpty(search)">Cari</ion-button>
+			<ion-button class="button button-block button-dark"  ng-click="loadRuteByRute(search)" ng-show="cari === 'rute_agen'" ng-init="saveEmpty(search)">Cari</ion-button>
+		</form>  
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,78 @@
+/*diguanakan untuk sidemenu*/
+.dark {
+  background-color: #3f4041 !important;
+  color: #ffffff;
+}
+/*Set the background to transparent for ion-item*/
+.dark .item {
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #464646;
+  border-bottom: 2px solid #333333;
+  color: #F0F1F1;
+  max-height: none;
+}
+/*untuk item paling akhir*/
+.dark .item:last-child {
+  border-bottom: 1px solid #333333;
+}
+
+/*Ion-item adds item-complex and an inner div, .item-content*/
+/* this needs to be transparent too, but doesnt need borders*/
+.dark .item-complex .item-content, .dark .item-radio .item-content {
+  background-color: transparent;
+}
+
+/*Just makes the type white*/
+.dark h2,
+.dark h3,
+.dark p,
+.dark a {
+  color: #F0F1F1;
+}
+/*end modify*/
+/*map modify*/
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
+/*end map modify*/
+
+/*Modify on detailed*/
+.item-button-right, button.item.item-button-right{
+  padding-right:0px !important
+}
+button.icon-modify{
+  font-size: 25px;
+  margin-bottom: 2px;
+}
+.font-divider{
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+/*end Modify on detailed*/
+/*begin modify form*/
+label.item.has-error{
+  border-left: 3px solid red;
+  border-right: 3px solid red;
+}
+
+label.item.valid{
+  border-left: 3px solid green;
+  border-right: 3px solid green;
+}
+
+.form-errors {
+  margin: 5px 0
+}
+
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+/*end modify form*/

@@ -1,0 +1,42 @@
+<ion-view view-title="Tentang Aplikasi">
+	<ion-content>
+	<!--ion list for button setting-->
+      <ion-list>
+      	<!--enable GPS-->
+        <div class="list card">
+          <div class="item item-divider"><Strong>Konfigurasi Sistem</strong></div>
+            <ion-toggle ng-repeat="item in settings" ng-model="item.flag" ng-checked="item.flag" ng-change="pushSettingsChange ()">
+              {{ item.text }}
+            </ion-toggle>
+        </div>
+        <div class="list card">
+          <div class="item item-divider"><strong>Tentang Sistem</strong>
+          </div>
+          <div class="item item-body">
+            <p align="justify"><strong>Fistra</strong> (Find With Dijkstra) merupakan aplikasi pencarian rute agen travel dan bus terdekat dengan metode dijkstra di Kota Semarang. Dengan aplikasi ini pengguna akan mendapatkan rute agen terdekat dengan tampilan navigasi di citra. Dalam aplikasi ini tersedia 35 Agen Bus AKAP dan 27 Agen Travel yang berlokasi di wilayah Kota Semarang. Aplikasi ini menggunakan basisdata lokal, yang memudahkan pengguna dalam mengelola semua data secara mandiri. Untuk cara penggunaan fitur pencarian agen Bus atau Travel terdekat ini disediakan 3 parameter pencarian yang dapat digunakan pengguna, yaitu:</p>
+            <p>1. Pencarian Berdasarkan Jenis Agen</p>
+            <p align="justify">Pencarian dengan berdasarkan jenis agen ini menyajikan metode pencarian lokasi agen travel atau bus terdekat dengan membandingkan jarak dari jenis agen dan rute tujuan yang diinginkan pengguna.</p>
+            <p>2.Pencarian Berdasarkan Rute Agen</p>
+            <p align="justify">Pencarian dengan berdasrakan rute agen ini menyajikan metode pencarian lokasi agen travel atau bus terdekat dengan membandingkan jarak dari agen yang menyediakan rute tujuan yang diinginkan tanpa melihat jenis agen transportasi. </p>
+            <p>3.Pencarian Berdasarkan Nama Agen</p>
+            <p align="justify">Pencarian dengan berdasarkan nama agen ini menyajikan metode pencarian lokasi agen travel atau bus terdekat dengan membandingkan jarak dari nama agen yang serupa atau agen dari penyedia angkutan transportasi yang sama.</p>
+            <p align="justify">Di menu <strong>beranda</strong> juga disediakan menu <strong>lokasi saya</strong>. Dengan menggunakan fitur ini pengguna dapat mengetahui posisinya di citra. Sedangkan untuk menambahkan data, pengguna dapat melakukannya di menu <strong>Data Agen</strong> di sebelah pojok kanan atas icon <i class="ion-plus"></i>. Dan untuk melakukan edit dan hapus pengguna cukup menggeser ke kiri data bersangkutan(edit dengan icon <i class="icon-pencil"></i> dan hapus dengan icon <i class="ion-android-trash"></i>). Pada menu <strong>Riwayat</strong>, pengguna dapat melihat data pencarian yang telah dilakukan. Di menu tersebut pula pengguna dapat melihat hasil pencarian dengan me-tap icon <i class="icon-eye2"></i> dan menghapus data pencarian dengan icon <i class="ion-trash-b"></i>. Dan terakhir pengguna dapat melakukan pengaturan kosongkan riwayat dan bagaimana cara penggunaan aplikasi ini pada menu <strong>Tentang Aplikasi</strong>.</p>
+          </div>
+        </div>
+        <div class="list card">
+          <div class="item item-divider">
+            <strong>Tentang Pengembang</strong>
+          </div>
+          <div class="item item-body">
+            <p>Nama   : M. Rizki Kurniawan</p>
+            <p>email  : risknoscale@gmail.com</p>
+          </div>
+        </div>
+        <!--minus about-->
+        <!--belum fix-->
+      </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-dark">
+      <h1 class="title">&copy; NOscale - 2015</h1>
+    </ion-footer-bar>
+</ion-view>

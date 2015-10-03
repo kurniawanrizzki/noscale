@@ -1,0 +1,28 @@
+<ion-view view-title="Detail Agen {{agen.nama_agen}}">
+	<ion-content>
+		<ion-list>
+		  <ion-item class="item-divider font-divider"><strong>Nama Agen</strong></ion-item>
+		  <ion-item>{{agen.nama_agen}}</ion-item>
+		  <ion-item class="item-divider font-divider"><strong>Alamat Agen</strong></ion-item>
+		  <ion-item>{{agen.alamat_agen}}</ion-item>
+		  <ion-item class="item-divider font-divider"><strong>Telepon Agen 1</strong></ion-item>
+		  <ion-item class="item-button-right">
+			{{agen.phone_agen_satu}}
+     			<div class="buttons">
+     			 	<a class="button-icon button-clear icon-local-phone icon-modify" ng-if="agen.phone_agen_satu != '-'" ng-href="tel: {{agen.phone_agen_satu}}"></a>
+        			<a class="button-icon button-clear icon-local-post-office icon-modify" ng-if="agen.phone_agen_satu != '-'" ng-click="kirimSMS(agen.phone_agen_satu,agen.nama_agen)"></a>
+        		</div>	
+		  </ion-item>
+		  <ion-item class="item-divider font-divider"><strong>Telepon Agen 2</strong></ion-item>
+		  <ion-item class="item-button-right">
+			{{agen.phone_agen_dua}}
+     			<div class="buttons">
+     			 	<a class="button-icon button-clear icon-local-phone icon-modify" ng-if="agen.phone_agen_dua != '-'" ng-href="tel: {{agen.phone_agen_dua}}"></a>	
+        			<a class="button-icon button-clear icon-local-post-office icon-modify" ng-if="agen.phone_agen_dua != '-'" ng-click="kirimSMS(agen.phone_agen_dua,agen.nama_agen)"></a>
+        		</div>	
+		  </ion-item>
+		  <ion-item class="item-divider font-divider"><strong>Rute Agen</strong></ion-item>
+		  <ion-item ng-repeat ="rute in ruteDetail">{{rute.asal_rute}} - {{rute.tujuan_rute}}</ion-item>
+		</ion-list>
+    </ion-content>
+</ion-view>

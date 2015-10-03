@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/icon-custom.css" rel="stylesheet">
+     <style>
+      .box {height:300px;padding: 10px;}
+     </style>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/controller/controller_map.js"></script>
+    <script src="js/controller/controller_agen.js"></script>
+    <script src="js/controller/controller_detail.js"></script>
+    <script src="js/controller/controller_riwayat.js"></script>
+    <script src="js/controller/controller_tentang.js"></script>
+    <script src="js/config/app.js"></script>
+    <script src="js/factory/DBservices.js"></script>
+    <script src="js/factory/ShowServices.js"></script>
+    <script src="js/factory/TxServices.js"></script>
+    <script src="js/directive/directive.js"></script>
+    <script src="js/constant/configDB.js"></script>
+    <script src="js/constant/agency.js"></script>
+    <script src="js/constant/ruteAgency.js"></script>
+    <script src="js/constant/dataLain.js"></script>
+  </head>
+  <body ng-app="starter" animation="slide-left-right">
+      <ion-nav-view></ion-nav-view>
+
+      <!-- ionic/angularjs js -->
+      <script src="js/angular-messages.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQyCepk4cuKxv0XmQ3Msb4QGwFyzKSocQ&sensor=true"></script>
+      <script src="cordova.js"></script>
+      <script src="js/ng-cordova.min.js"></script>
+  </body>
+</html>
